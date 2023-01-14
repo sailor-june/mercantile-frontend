@@ -1,9 +1,20 @@
 import React from 'react'
 
-function Main component() {
-  return (
-    <div>Main component</div>
-  )
-}
- component
-export default Main
+function Main() {
+    return (
+        <main>
+          <Routes>
+            <Route 
+              path="/" 
+              element={<Index />} 
+            />
+
+            <Route 
+            path="/items/:id"
+            element={<itemShow />}/> 
+          </Routes>
+        </main>
+      );
+    }
+    
+    export default Main;
