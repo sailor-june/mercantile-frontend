@@ -1,4 +1,8 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom';
+import Index from '../pages/Index';
+import ItemShow from '../pages/ItemShow';
+import Wanted from '../pages/Wanted';
 
 function Main() {
     return (
@@ -11,7 +15,9 @@ function Main() {
 
             <Route 
             path="/items/:id"
-            element={<itemShow />}/> 
+            element={<ItemShow />}/> 
+
+            <Route path="/wanted" element={<Wanted />}/>
           </Routes>
         </main>
       );
