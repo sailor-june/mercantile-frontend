@@ -1,11 +1,13 @@
+import { Link } from 'react-router-dom'
 import React from 'react'
 
 function Item(props) {
   return (
     <div className='itemCard'>
-        <div className='itemImg'>
+       <Link to="/items/:id"> <div className='itemImg'>
             IMAGE GOES HERE
         </div>
+        </Link>
         <div className='itemData'>
                 <li>Item Name</li>
                 <li>Item tags</li>

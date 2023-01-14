@@ -5,7 +5,7 @@ function Header() {
     <div className='header'>
     <h1>Welcome</h1>
     <h2> login /create acct </h2>
-    <div className='links'><p> view wanted ads</p>  <p>search</p> <p>about</p> <p>post an item</p></div>
+    <div className='links'> <p>view wanted ads</p>  <p>search</p> <p>about</p> <p>post an item</p></div>
     </div>
   )
 }
