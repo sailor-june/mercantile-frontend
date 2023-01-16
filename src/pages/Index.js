@@ -1,16 +1,23 @@
 import React from 'react'
 import Item from '../components/Item'
 function Index(props) {
-  console.log(props)
-let frontPageItems=[]
-for (let item of props.items){
 
-  frontPageItems.push(<Item item={item}/>)
-}
+
+  const loaded =() =>{
+    let frontPageItems = props.items.map((item)=>(
+      <Item item={item} key={item._id}/>))
+    
+    return(frontPageItems)
+
+    }
+    const loading = ()=>{
+      <div>Loading...</div>
+    }
+
 
   return (
     <div className='container'>
-      {frontPageItems}
+      {props.items? loaded(): loading}
     </div>
   )
 }

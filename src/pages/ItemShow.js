@@ -1,10 +1,17 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-function ItemShow() {
+function ItemShow(props) {
+
+  const { id } = useParams();
+const item= props.items? props.items.find((item)=>item._id === id):null;
+
+
+
   return (
-    <div className='itemCard '>
+    <div className='itemShow'>
     <div className='itemImg'>
-        IMAGE GOES HERE
+        <img src={item.image}/>
     </div>
 
     <div className='itemData'>

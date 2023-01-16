@@ -30,7 +30,7 @@ function Main() {
 
             <Route 
             path="/items/:id"
-            element={<ItemShow />}/> 
+            element={<ItemShow items={items}/>} /> 
 
             <Route path="/wanted" element={<Wanted />}/>
           </Routes>
