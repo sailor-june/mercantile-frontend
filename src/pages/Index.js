@@ -1,13 +1,24 @@
 import React from 'react'
 import Item from '../components/Item'
+import { Link } from 'react-router-dom'
 function Index(props) {
 
 
   const loaded =() =>{
-    let frontPageItems = props.items.map((item)=>(
-      <Item item={item} key={item._id}/>))
     
-    return(frontPageItems)
+      return props.items.map((item)=>(
+      <div className="itemCard">
+        
+        <Link to={`/items/${item._id}`}>
+        
+          <div className="itemImg"><img src={`${item.image}`}/></div>
+        </Link>
+        <div className="itemData">
+          <li>{item.name}</li>
+          <li>{item.condition}</li>
+          
+        </div></div>)
+    )
 
     }
     const loading = ()=>{
