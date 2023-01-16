@@ -15,11 +15,12 @@ const item= props.items? props.items.find((item)=>item._id === id):null;
     </div>
 
     <div className='itemData'>
-            <li>Item Name</li>
-            <li>Item description</li>
-            <li>Items wanted</li>
-            <li>Item tags</li>
-    </div>        
+            <li>{item.name}</li>
+            <li>{item.condition}</li>
+            <li>{item.description}</li>
+
+            <li>LINK TO SELLERS PROFILE</li>
+                </div>        
 </div>
   )
 }
