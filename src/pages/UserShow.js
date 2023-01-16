@@ -2,7 +2,9 @@ import React from 'react'
 
 function UserShow() {
   return (
-    <div>UserShow</div>
+    <div className="user">
+
+    </div>
   )
 }
 

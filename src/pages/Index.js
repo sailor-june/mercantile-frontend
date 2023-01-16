@@ -1,12 +1,16 @@
 import React from 'react'
 import Item from '../components/Item'
-function Index() {
+function Index(props) {
+  console.log(props)
+let frontPageItems=[]
+for (let item of props.items){
+
+  frontPageItems.push(<Item item={item}/>)
+}
+
   return (
     <div className='container'>
-    <Item />
-    <Item />
-    <Item />
-    <Item />
+      {frontPageItems}
     </div>
   )
 }

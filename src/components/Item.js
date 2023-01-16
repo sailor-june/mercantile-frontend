@@ -2,37 +2,38 @@ import { Link, useParams } from "react-router-dom";
 import React from "react";
 
 function Item(props) {
-  if (props.wanted == "true") {
+  console.log(props)
+  // if (props.wanted === "true") {
     return (
       <div className="itemCard">
-        WANTED:
-        <Link to="/items/:id">
         
-          <div className="itemImg">IMAGE GOES HERE</div>
+        <Link to={`/items/${props.item._id}`}>
+        
+          <div className="itemImg"><img src={`${props.item.image}`}/></div>
         </Link>
         <div className="itemData">
-          <li>Item Name</li>
-          <li>Item tags</li>
-          <li>Items offered</li>
+          <li>{props.item.name}</li>
+          <li>{props.item.condition}</li>
+          
         </div>
       </div>
     );
-  } else {
-    return(
-      <div className="itemCard">
-      OFFERED: 
-      <Link to="/items/:id">
+  // } else {
+  //   return(
+  //     <div className="itemCard">
+  //     OFFERED: 
+  //     <Link to="/items/:id">
       
-        <div className="itemImg">IMAGE GOES HERE</div>
-      </Link>
-      <div className="itemData">
-        <li>Item Name</li>
-        <li>Item tags</li>
-        <li>Items wanted</li>
-      </div>
-    </div>
-    )
-  }
+  //       <div className="itemImg">IMAGE GOES HERE</div>
+  //     </Link>
+  //     <div className="itemData">
+  //       <li>Item Name</li>
+  //       <li>Item tags</li>
+  //       <li>Items wanted</li>
+  //     </div>
+  //   </div>
+  //   )
+  // }
 }
 
 export default Item;

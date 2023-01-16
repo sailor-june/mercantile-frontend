@@ -63,3 +63,15 @@ body {
   background-color: cadetblue;
   box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 5px rgb(139, 232, 235);
 }
+
+.user{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40rem;
+  height: 74.4rem;
+  background-color: cadetblue;
+  box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 5px rgb(139, 232, 235);
+
+}
