@@ -1,13 +1,13 @@
 import React from 'react'
 
-function ItemShow(props) {
+function ItemShow() {
   return (
     <div className='itemCard '>
     <div className='itemImg'>
         IMAGE GOES HERE
     </div>
-    <div className='itemData'>
 
+    <div className='itemData'>
             <li>Item Name</li>
             <li>Item description</li>
             <li>Items wanted</li>
