@@ -15,9 +15,13 @@ function Index(props) {
         </Link>
         <div className="itemData">
           <li>{item.name}</li>
-          <li>{item.condition}</li>
+          {item.condition? <div>Condition: <li>{item.condition}</li></div>:null}
+          </div>
+          </div>
           
-        </div></div>)
+
+          
+        )
     )
 
     }
