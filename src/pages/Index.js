@@ -7,7 +7,7 @@ function Index(props) {
   const loaded =() =>{
     
       return props.items.map((item)=>(
-      <div className="itemCard">
+      <div className="itemCard" key={item._id}>
         
         <Link to={`/items/${item._id}`}>
         

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom';
-
 import { auth } from '../firebase'
 import { onAuthStateChanged } from 'firebase/auth';
 
@@ -9,6 +8,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import Index from '../pages/Index';
 import ItemShow from '../pages/ItemShow';
 import Wanted from '../pages/Wanted';
+import NewItem from '../pages/NewItem';
 
 function Main() {
 
@@ -26,6 +26,28 @@ function Main() {
     const data = await response.json()
       setItems(data)
       }
+
+
+      const createItem = async(item) => {
+        //make post request to create item
+        await fetch(URL + "items", {
+          
+          method: 'POST',
+          headers: {
+            'Content-Type': 'Application/json'
+          },
+          body: JSON.stringify(item),
+        }
+        );
+
+
+        //update list of people
+        getItems();
+        console.log(item)
+      }
+    
+    
+
       useEffect(()=>{
       getItems();
       },[])
@@ -49,6 +71,8 @@ function Main() {
             element={<ItemShow items={items}/>} /> 
 
             <Route path="/wanted" element={<Wanted />}/>
+
+            <Route path="/items/new" element={<NewItem createItem={createItem} />}/>
           </Routes>
         </main>
       );
