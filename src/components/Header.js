@@ -10,7 +10,7 @@ function Header() {
     <div className='signin'>
       <button onClick={login}>login</button>
       <button onClick={logout}>logout</button> </div>
-    <div className='links'> <Link to='/wanted'>View wanted ads</Link>  <p>search</p> <p>about</p> <p>post an item</p></div>
+    <div className='links'> <Link to='/wanted'>View wanted ads</Link>  <p>search</p> <Link to ='/about'><p>about</p> </Link><p>post an item</p></div>
     </div>
     </>
   )
