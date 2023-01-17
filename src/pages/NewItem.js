@@ -31,7 +31,15 @@ function NewItem(props) {
           placeholder="name"
           onChange={handleChange}
         />
-
+        <select value={newForm.condition}
+        name="condition"
+        placeholder="condition"
+        onChange={handleChange} >
+            <option value="new" >new</option>
+            <option value="good">good</option>
+            <option value="fair">fair</option>
+            <option value="used">used</option>
+        </select>
         <input
           type="text"
           value={newForm.description}
