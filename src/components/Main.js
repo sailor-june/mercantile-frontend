@@ -45,6 +45,13 @@ function Main() {
         getItems();
         console.log(item)
       }
+
+      const deleteItem = async (id) => {
+        await fetch(URL + "items/" + id, {
+          method: 'DELETE'
+        })
+        getItems()
+      }
     
     
 
@@ -68,7 +75,12 @@ function Main() {
 
             <Route 
             path="/items/:id"
-            element={<ItemShow items={items}/>} /> 
+            element={
+            <ItemShow 
+            items={items}
+            deleteItem={deleteItem}
+            />} 
+            /> 
 
             <Route path="/wanted" element={<Wanted />}/>
 
