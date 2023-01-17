@@ -32,8 +32,8 @@ const loaded = () => {
 
       <div className='itemData'>
             <li>{item.name}</li>
-            <li>{item.condition}</li>
-            <li>{item.description}</li>
+            <li>condition: {item.condition}</li>
+            <span><li>description: {item.description}</li></span>
 
             <li>LINK TO OWNER PROFILE</li>
       </div>
