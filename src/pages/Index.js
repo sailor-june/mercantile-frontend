@@ -1,12 +1,14 @@
 import React from 'react'
 import Item from '../components/Item'
 import { Link } from 'react-router-dom'
+
 function Index(props) {
 
 
   const loaded =() =>{
     
       return props.items.map((item)=>(
+
       <div className="itemCard" key={item._id}>
         
         <Link to={`/items/${item._id}`}>
