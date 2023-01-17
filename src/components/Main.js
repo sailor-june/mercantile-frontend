@@ -39,8 +39,6 @@ function Main() {
           body: JSON.stringify(item),
         }
         );
-
-
         //update list of people
         getItems();
         console.log(item)
