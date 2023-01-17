@@ -19,7 +19,7 @@ const item= props.items? props.items.find((item)=>item._id === id):null;
             <li>{item.condition}</li>
             <li>{item.description}</li>
 
-            <li>LINK TO SELLERS PROFILE</li>
+            <li>LINK TO OWNER PROFILE</li>
                 </div>        
 </div>
   )
