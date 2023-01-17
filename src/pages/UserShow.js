@@ -2,8 +2,8 @@ import React from 'react'
 
 function UserShow() {
   return (
-    <div className="user">
-
+    <div className="userAbout">
+      <p>this is an about page</p>
     </div>
   )
 }
