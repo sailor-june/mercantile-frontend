@@ -9,7 +9,7 @@ import Index from '../pages/Index';
 import ItemShow from '../pages/ItemShow';
 import Wanted from '../pages/Wanted';
 import NewItem from '../pages/NewItem';
-
+import Distance from './Distance';
 function Main() {
 
   

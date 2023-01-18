@@ -1,12 +1,13 @@
 import React from 'react'
 import Item from '../components/Item'
 import { Link } from 'react-router-dom'
+import Distance from '../components/Distance'
 
 function Index(props) {
 
 
   const loaded =() =>{
-    
+
       return props.items.map((item)=>(
 
       <div className="itemCard" key={item._id}>
@@ -34,6 +35,7 @@ function Index(props) {
 
   return (
     <div className='container'>
+      <Distance/>
       {props.items? loaded(): loading}
     </div>
   )
