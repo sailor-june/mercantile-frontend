@@ -31,10 +31,9 @@ function Main() {
       const createItem = async(item) => {
         //make post request to create item
         await fetch(URL + "items", {
-          
           method: 'POST',
           headers: {
-            'Content-Type': 'Application/json'
+            'Content-type': 'Application/json'
           },
           body: JSON.stringify(item),
         }
@@ -42,6 +41,17 @@ function Main() {
         //update list of people
         getItems();
         console.log(item)
+      }
+
+      const updateItem = async (id, updatedItem) => {
+        await fetch(URL + "items/" + id, {
+          method: 'PUT',
+          headers: {
+            'Content-type': 'Application/json'
+          },
+          body: JSON.stringify(updatedItem),
+        })
+        getItems()
       }
 
       const deleteItem = async (id) => {
@@ -68,7 +78,9 @@ function Main() {
           <Routes>
             <Route 
               path="/" 
-              element={<Index items={items}/>} 
+              element={
+              <Index items={items}
+              />} 
             />
 
             <Route 
@@ -77,6 +89,7 @@ function Main() {
             <ItemShow 
             items={items}
             deleteItem={deleteItem}
+            updateItem={updateItem}
             />} 
             /> 
 
