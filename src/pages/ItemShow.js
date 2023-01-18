@@ -1,6 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
+import Distance from '../components/Distance';
+
 function ItemShow(props) {
 
   const { id } = useParams();

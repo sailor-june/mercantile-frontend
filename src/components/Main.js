@@ -9,6 +9,10 @@ import { onAuthStateChanged } from 'firebase/auth';
 import Index from '../pages/Index';
 import ItemShow from '../pages/ItemShow';
 import Wanted from '../pages/Wanted';
+import Distance from './Distance';
+
+
+
 
 function Main() {
 
