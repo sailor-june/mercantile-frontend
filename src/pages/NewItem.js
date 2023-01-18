@@ -1,11 +1,20 @@
 import React from "react";
 import { useState } from "react";
+  import { auth } from "../firebase";
+  import { getAuth } from "firebase/auth"; 
+
 function NewItem(props) {
+  const [user, setUser]=useState(null)
+  
+
+
+
+
 
     const formFields = {
         name: '',
         condition: '',
-      };
+        user:'' };
 
    //state to hold formData
     const [newForm, setNewForm] = useState(formFields);        
@@ -20,7 +29,7 @@ function NewItem(props) {
                 setNewForm(formFields)
                  };
     
-  return (
+  return (<>
     <div className="newitem">
       <form onSubmit={handleSubmit}>
         
@@ -47,10 +56,17 @@ function NewItem(props) {
           placeholder="description"
           onChange={handleChange}
         />
+                <input 
+        type="text"
+        value={newForm.user}
+        name="user"
+        className="hidden" 
+        onChange={handleChange}/>
 
         <input type="submit" value="create item" />
       </form>
     </div>
+    </>
   );
 }
 
