@@ -6,6 +6,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 
 
 import Index from '../pages/Index';
+import About from '../pages/About'
 import ItemShow from '../pages/ItemShow';
 import Wanted from '../pages/Wanted';
 import NewItem from '../pages/NewItem';
@@ -77,7 +78,7 @@ function Main() {
         <main>
           <Routes>
             <Route 
-              path="/" 
+              path="/items" 
               element={
               <Index items={items}
               />} 
@@ -96,6 +97,7 @@ function Main() {
             <Route path="/wanted" element={<Wanted />}/>
 
             <Route path="/items/new" element={<NewItem createItem={createItem} />}/>
+            <Route path ="/" element ={<About />}/>
           </Routes>
         </main>
       );
