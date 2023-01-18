@@ -6,18 +6,19 @@ import { onAuthStateChanged } from 'firebase/auth';
 
 
 import Index from '../pages/Index';
+import About from '../pages/About'
 import ItemShow from '../pages/ItemShow';
 import Wanted from '../pages/Wanted';
 import NewItem from '../pages/NewItem';
 import Distance from './Distance';
+import Update from '../pages/Update';
 function Main() {
 
   
   /////////////set Items state
   const [items, setItems] = useState(null)
   const [user, setUser] = useState(null)
-  
-  
+
   const URL= "http://mercantile.herokuapp.com/"
 
   
@@ -44,7 +45,7 @@ function Main() {
       }
 
       const updateItem = async (id, updatedItem) => {
-        await fetch(URL + "items/" + id, {
+        await fetch(URL + "items/update/" + id, {
           method: 'PUT',
           headers: {
             'Content-type': 'Application/json'
@@ -77,7 +78,7 @@ function Main() {
         <main>
           <Routes>
             <Route 
-              path="/" 
+              path="/items" 
               element={
               <Index items={items}
               />} 
@@ -89,13 +90,22 @@ function Main() {
             <ItemShow 
             items={items}
             deleteItem={deleteItem}
-            updateItem={updateItem}
             />} 
             /> 
+
+            <Route
+            path="/items/update/:id"
+            element={
+              <Update
+              items={items}
+              updateItem={updateItem}
+            />}
+            />
 
             <Route path="/wanted" element={<Wanted />}/>
 
             <Route path="/items/new" element={<NewItem createItem={createItem} />}/>
+            <Route path ="/" element ={<About />}/>
           </Routes>
         </main>
       );
