@@ -10,6 +10,7 @@ import Index from '../pages/Index';
 import ItemShow from '../pages/ItemShow';
 import Wanted from '../pages/Wanted';
 import Distance from './Distance';
+import NewItem from '../pages/NewItem';
 
 
 
@@ -53,6 +54,8 @@ function Main() {
             element={<ItemShow items={items}/>} /> 
 
             <Route path="/wanted" element={<Wanted />}/>
+
+            <Route path='/new' element={<NewItem/>}/>
           </Routes>
         </main>
       );
