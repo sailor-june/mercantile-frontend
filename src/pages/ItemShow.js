@@ -45,7 +45,7 @@ const loading = () => {
 
 const handleDelete = () => {
   props.deleteItem(id)
-  navigate('/')
+  navigate('/items')
 }
 
 return (
