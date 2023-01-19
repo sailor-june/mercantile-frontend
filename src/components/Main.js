@@ -31,7 +31,7 @@ function Main() {
 
       const createItem = async(item) => {
         //make post request to create item
-        await fetch(URL + "items", {
+        await fetch(URL + "items/new", {
           method: 'POST',
           headers: {
             'Content-type': 'Application/json'
@@ -104,7 +104,14 @@ function Main() {
 
             <Route path="/wanted" element={<Wanted />}/>
 
-            <Route path="/items/new" element={<NewItem createItem={createItem} />}/>
+            <Route 
+            path="/items/new" 
+            element={
+            <NewItem 
+            items={items}
+            createItem={createItem} 
+            />}
+            />
             <Route path ="/" element ={<About />}/>
           </Routes>
         </main>

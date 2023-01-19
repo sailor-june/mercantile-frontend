@@ -7,6 +7,7 @@ function Index(props) {
 
 
   const loaded =() =>{
+   
 
       return props.items.map((item)=>(
 
@@ -22,7 +23,6 @@ function Index(props) {
           </div>
           </div>
           
-
           
         )
     )
