@@ -19,6 +19,7 @@ function Main(props) {
 
   const URL = "http://mercantile.herokuapp.com/";
 
+
   const getUser= async()=>{
     const token= await props.user.getIdToken()
     const response = await fetch(URL+"users",{
@@ -77,6 +78,7 @@ function Main(props) {
   useEffect(()=>{
     if (props.user){
       getUser()
+
     }
   },[props.user])
 

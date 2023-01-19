@@ -6,9 +6,13 @@ function Index(props) {
   const loaded = () => {
 
 
+
     let itemList = props.items.map((item) => (
-      
-      
+     
+   
+
+      return props.items.map((item)=>(
+
       <div className="itemCard" key={item._id}>
         
         <Link to={`/items/${item._id}`}>
@@ -19,6 +23,7 @@ function Index(props) {
         
         <div className="itemData">
           <li>{item.name}</li>
+
           {item.condition ? (
             <div>
               Condition: <li>{item.condition}</li>
@@ -41,6 +46,7 @@ function Index(props) {
   };
 
   return <div className="container">{props.items ? loaded() : loading}</div>;
+
 }
 
 export default Index;
