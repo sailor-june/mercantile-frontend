@@ -103,7 +103,7 @@ function Main() {
             />
 
             <Route path="/wanted" element={<Wanted />}/>
-
+            <Route path='/about' element = {<About />}/>
             <Route path="/items/new" element={<NewItem createItem={createItem} />}/>
             <Route path ="/" element ={<About />}/>
           </Routes>
