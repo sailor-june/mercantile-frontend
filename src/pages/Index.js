@@ -41,7 +41,6 @@ function Index(props) {
           }
         };
 
-        let distanceInfo = '';
 
         
         fetch(url, options)
@@ -49,7 +48,9 @@ function Index(props) {
             .then(json => setNewDistance(json.distance))
             .catch(err => console.error('error:' + err));
 
-        return newDistance;
+        console.log(newDistance)
+        let distanceInfo = JSON.stringify(newDistance);
+        return distanceInfo
     }
 
 
@@ -76,7 +77,8 @@ function Index(props) {
             ) : null}
             {item.zipcode ? (
               <div>
-                Distance: <li><li>{searchZipcodes(newForm.zipcode1, item.zipcode)}</li></li>
+                Distance: <li>{searchZipcodes(67206, item.zipcode)} meters</li>
+                {console.log(`newDistance: ${searchZipcodes(67206, item.zipcode)}`)}
               </div>
             ) : null}
           </div>
@@ -84,18 +86,6 @@ function Index(props) {
       ))
       
       return (<> 
-        <section>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type='text' 
-                    value={newForm.zipcode1}
-                    name="zipcode1"
-                    placeholder="zipcode"
-                    onChange={handleChange}
-                />
-                <input type="submit" value="submit zipcode"/>
-            </form>
-        </section>
       {itemList}
       </>)
 
@@ -113,6 +103,19 @@ function Index(props) {
 
   return (
     <div className='container'>
+          <section>
+            <form onSubmit={handleSubmit}>
+                <input 
+                    type='text' 
+                    value={newForm.zipcode1}
+                    name="zipcode1"
+                    placeholder="zipcode"
+                    onChange={handleChange}
+                />
+                <input type="submit" value="submit zipcode"/>
+            </form>
+            <br></br>
+        </section>
       {props.items? loaded(): loading}
     </div>
   )

@@ -10,7 +10,6 @@ import ItemShow from '../pages/ItemShow';
 import Wanted from '../pages/Wanted';
 import NewItem from '../pages/NewItem';
 import Distance from './Distance';
-import NewItem from '../pages/NewItem';
 
 
 
