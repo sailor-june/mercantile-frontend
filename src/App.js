@@ -1,14 +1,19 @@
 
 import './App.css';
-import Item from './components/Item';
 import Header from './components/Header';
 import Main from './components/Main';
+import AboutPage from './pages/About';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      
+      <Header />
       <Main />
+      <Routes>
+        <Route path='/about' element = {<AboutPage/>}></Route>
+      </Routes>
     </div>
   );
 }
