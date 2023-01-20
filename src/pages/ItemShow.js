@@ -18,6 +18,12 @@ useEffect(() => {
   }
 }, [item])
 
+  const mailClick = () => {
+    const mailtoLink = document.createElement('a');
+    mailtoLink.href = `mailto:${item.contact}`;
+    mailtoLink.click();
+  };
+
 const loaded = () => {
 
   const adminTools= (
@@ -35,10 +41,10 @@ console.log(item.uid)
 
       <div className='itemData'>
             <li>{item.name}</li>
-            <li>condition: {item.condition}</li>
-            <span><li>description: {item.description}</li></span>
-
-            <li>LINK TO OWNER PROFILE</li>
+            <li>Condition: {item.condition}</li>
+            <span><li>Description: {item.description}</li></span>
+            <li>Posted by {item.user}</li>
+            <button onClick={mailClick}>Contact</button>
       </div>
       {props.user.uid===item.uid?adminTools:<></>}
     </div>

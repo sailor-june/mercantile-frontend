@@ -9,25 +9,20 @@ function Index(props) {
 
       <div className="itemCard" key={item._id}>
         
-        <Link to={`/items/${item._id}`}>
+          <Link to={`/items/${item._id}`}>
           <div className="itemImg">
             <img src={`${item.image}`} />
           </div>
-        </Link>
-        
-        <div className="itemData">
+          </Link>
+          <ul>
           <li>{item.name}</li>
-
-          {item.condition ? (
-            <div>
-              Condition: <li>{item.condition}</li>
-            </div>
-          ) : null}
+          <li>{item.user}</li>
+          <li>{item.condition}</li>
           <li>{item.zipcode}</li>
-        </div>
+          </ul>
       </div>
    
-    ));
+    )))
 
 
     return (
