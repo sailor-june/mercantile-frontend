@@ -93,7 +93,7 @@ function Main(props) {
 
         <Route
           path="/items/:id"
-          element={<ItemShow items={items} deleteItem={deleteItem} />}
+          element={<ItemShow items={items} deleteItem={deleteItem} user={props.user} />}
         />
 
         <Route
