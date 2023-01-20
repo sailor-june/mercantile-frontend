@@ -5,13 +5,7 @@ import { Link } from "react-router-dom";
 function Index(props) {
   const loaded = () => {
 
-
-
-    let itemList = props.items.map((item) => (
-     
-   
-
-      return props.items.map((item)=>(
+     const itemList = (props.items.map((item)=>(
 
       <div className="itemCard" key={item._id}>
         
@@ -32,7 +26,7 @@ function Index(props) {
           <li>{item.zipcode}</li>
         </div>
       </div>
-    ));
+    )));
 
     return (
       <>

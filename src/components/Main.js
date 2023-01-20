@@ -41,7 +41,7 @@ function Main(props) {
   const createItem = async (item) => {
  
     //make post request to create item
-    await fetch(URL + "items", {
+    await fetch(URL + "items/new", {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
@@ -102,7 +102,7 @@ function Main(props) {
         <Route path="/about" element={<About />} />
         <Route
           path="/items/new"
-          element={<NewItem createItem={createItem} />}
+          element={<NewItem createItem={createItem} user={props.user}/>}
         />
         <Route path="/" element={<About />} />
       </Routes>
