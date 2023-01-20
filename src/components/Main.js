@@ -19,6 +19,7 @@ function Main(props) {
 
   const URL = "http://localhost:4000/";
 
+
   const getUser= async()=>{
     const token= await props.user.getIdToken()
     const response = await fetch(URL+"users",{
@@ -42,7 +43,7 @@ function Main(props) {
     const token = await props.user.getIdToken();
 
     //make post request to create item
-    await fetch(URL + "items", {
+    await fetch(URL + "items/new", {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
@@ -80,6 +81,7 @@ function Main(props) {
   useEffect(()=>{
     if (props.user){
       getUser()
+
     }
   },[props.user])
 

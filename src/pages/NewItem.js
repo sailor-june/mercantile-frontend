@@ -1,17 +1,13 @@
-import React from "react";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
   import { auth } from "../firebase";
   import { getAuth } from "firebase/auth"; 
 
 function NewItem(props) {
-  const [user, setUser]=useState(null)
+  const navigate = useNavigate()
   
-
-
-
-
-
     const formFields = {
+
         name: '',
         condition: '',
         uid:`${props.user.uid}` };
@@ -23,11 +19,11 @@ function NewItem(props) {
             setNewForm({
                 ...newForm, [event.target.name]: event.target.value})    };        
     //handleSubmit function for form    
-    const handleSubmit = (event) => {    
+    const handleSubmit = async(event) => {    
         event.preventDefault();
-            props.createItem(newForm);
-                setNewForm(formFields)
-                 };
+        props.createItem(newForm).then(i=>(
+                navigate('/items')))}
+                 ;
     
   return (<>
     <div className="newitem">
@@ -56,14 +52,9 @@ function NewItem(props) {
           placeholder="description"
           onChange={handleChange}
         />
-                <input 
-        type="text"
-        value={newForm.user}
-        name="user"
-        className="hidden" 
-        onChange={handleChange}/>
+            
 
-        <input type="submit" value="create item" />
+        <input type="submit" value="Create Listing" />
       </form>
     </div>
     </>
