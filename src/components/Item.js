@@ -5,15 +5,25 @@ function Item(props) {
   console.log(props);
   // if (props.wanted === "true") {
   return (
-    <div className="itemCard">
-      <Link to={`/items/${props.item._id}`}>
-        <div className="itemImg">
-          <img src={`${props.item.image}`} />
+    <div className="itemCard" key={item._id}>
+        
+    <Link to={`/items/${item._id}`}>
+      <div className="itemImg">
+        <img src={`${item.image}`} />
+      </div>
+    </Link>
+    
+    <div className="itemData">
+      <li>{item.name}</li>
+
+      {item.condition ? (
+        <div>
+          Condition: <li>{item.condition}</li>
         </div>
-      </Link>
-      <div className="itemData"><li>{props.item.name}</li></div>
-      <div className="itemData"> Condition: <li>{props.item.condition}</li></div>
+      ) : null}
+      <li>{item.zipcode}</li>
     </div>
+  </div>
   );
   // } else {
   //   return(

@@ -15,9 +15,9 @@ function Main(props) {
  
 
   const [items, setItems] = useState(null);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
 
-  const URL = "http://mercantile.herokuapp.com/";
+  const URL = "http://localhost:4000/";
 
 
   const getUser= async()=>{
@@ -29,6 +29,7 @@ function Main(props) {
       }
     })
     const data= await response.json();
+   
     setUser(data)
   }
 
@@ -90,21 +91,21 @@ function Main(props) {
 
         <Route
           path="/items/:id"
-          element={<ItemShow items={items} deleteItem={deleteItem} />}
+          element={<ItemShow items={items} deleteItem={deleteItem} user={props.user}/>}
         />
 
         <Route
           path="/items/update/:id"
-          element={<Update items={items} updateItem={updateItem} />}
+          element={<Update items={items} updateItem={updateItem} user={props.user}/>}
         />
 
-        <Route path="/wanted" element={<Wanted />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/wanted" element={<Wanted user={props.user}/>} />
+        <Route path="/about" element={<About user={props.user}/>} />
         <Route
           path="/items/new"
           element={<NewItem createItem={createItem} user={props.user}/>}
         />
-        <Route path="/" element={<About />} />
+        <Route path="/" element={<About user={props.user}/>} />
       </Routes>
     </main>
   );

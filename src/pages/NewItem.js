@@ -10,7 +10,7 @@ function NewItem(props) {
       name: '',
       description: '',
       condition: '',
-      uid: ''
+      uid: props.user.uid
     }
 
    //state to hold formData
@@ -18,7 +18,7 @@ function NewItem(props) {
     //handleChange function for form    
     const handleChange = (event) => {
             setNewForm({
-                ...newForm, [event.target.name]: event.target.value, uid:props.user.uid})    };        
+                ...newForm, [event.target.name]: event.target.value})    };        
     //handleSubmit function for form    
     const handleSubmit = async(event) => {    
         event.preventDefault();
