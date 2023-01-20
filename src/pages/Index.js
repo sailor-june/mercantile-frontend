@@ -27,13 +27,14 @@ function Index(props) {
           <li>{item.zipcode}</li>
         </div>
       </div>
+      
     ));
 
     return (
-      <>
-        {" "}
+      <div className="container">
+        
         {itemList}
-      </>
+      </div>
     );
   };
   const loading = () => {
