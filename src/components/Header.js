@@ -12,7 +12,11 @@ function Header() {
     <div className='signin'>
       <button onClick={login}>Login</button>
       <button onClick={logout}>Logout</button> </div>
-    <div className='links'> <Link to='/wanted'>View Wanted Ads</Link>  Search <Link to ='/items'>Listings</Link><Link to="/items/new">Create a Listing</Link></div>
+    <div className='links'>
+       <Link to='/wanted'>View Wanted Ads</Link>
+         Search <Link to ='/items'>Listings</Link>
+         <Link to="/items/new">Create a Listing</Link>
+         </div>
     <Distance />
 
     </div>

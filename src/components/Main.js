@@ -17,7 +17,7 @@ function Main(props) {
   const [items, setItems] = useState(null);
   const [user, setUser] = useState(null);
 
-  const URL = "http://mercantile.herokuapp.com/";
+  const URL = "http://localhost:4000/";
 
   const getUser= async()=>{
     const token= await props.user.getIdToken()
@@ -38,12 +38,15 @@ function Main(props) {
   };
 
   const createItem = async (item) => {
- 
+    if (!props.user) return;
+    const token = await props.user.getIdToken();
+
     //make post request to create item
     await fetch(URL + "items", {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
+        "Authorization": "Bearer "+token
       },
       body: JSON.stringify(item),
     });
@@ -100,7 +103,7 @@ function Main(props) {
         <Route path="/about" element={<About />} />
         <Route
           path="/items/new"
-          element={<NewItem createItem={createItem} />}
+          element={<NewItem createItem={createItem} user={props.user}/>}
         />
         <Route path="/" element={<About />} />
       </Routes>

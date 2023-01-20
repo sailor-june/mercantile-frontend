@@ -14,7 +14,7 @@ function NewItem(props) {
     const formFields = {
         name: '',
         condition: '',
-        user:'' };
+        uid:`${props.user.uid}` };
 
    //state to hold formData
     const [newForm, setNewForm] = useState(formFields);        
