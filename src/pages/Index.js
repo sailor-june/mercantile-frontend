@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 function Index(props) {
   const loaded = () => {
 
+     const itemList = (props.items.map((item)=>(
 
-    let itemList = props.items.map((item) => (
-      
-      
       <div className="itemCard" key={item._id}>
         
         <Link to={`/items/${item._id}`}>
@@ -19,6 +17,7 @@ function Index(props) {
         
         <div className="itemData">
           <li>{item.name}</li>
+
           {item.condition ? (
             <div>
               Condition: <li>{item.condition}</li>
@@ -27,8 +26,9 @@ function Index(props) {
           <li>{item.zipcode}</li>
         </div>
       </div>
-      
+   
     ));
+
 
     return (
       <div className="container">
@@ -42,6 +42,7 @@ function Index(props) {
   };
 
   return <div className="container">{props.items ? loaded() : loading}</div>;
+
 }
 
 export default Index;
