@@ -7,18 +7,17 @@ function NewItem(props) {
   const navigate = useNavigate()
   
     const formFields = {
-      name: '',
-      description: '',
-      condition: '',
-      uid: ''
-    }
+
+        name: '',
+        condition: '',
+        uid:`${props.user.uid}` };
 
    //state to hold formData
     const [newForm, setNewForm] = useState(formFields);        
     //handleChange function for form    
     const handleChange = (event) => {
             setNewForm({
-                ...newForm, [event.target.name]: event.target.value, uid:props.user.uid})    };        
+                ...newForm, [event.target.name]: event.target.value})    };        
     //handleSubmit function for form    
     const handleSubmit = async(event) => {    
         event.preventDefault();
