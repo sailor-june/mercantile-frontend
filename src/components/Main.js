@@ -42,7 +42,7 @@ function Main(props) {
     const token = await props.user.getIdToken();
 
     //make post request to create item
-    await fetch(URL + "items", {
+    await fetch(URL + "items/new", {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
@@ -91,7 +91,7 @@ function Main(props) {
 
         <Route
           path="/items/:id"
-          element={<ItemShow items={items} deleteItem={deleteItem} />}
+          element={<ItemShow items={items} deleteItem={deleteItem} user={props.user} />}
         />
 
         <Route

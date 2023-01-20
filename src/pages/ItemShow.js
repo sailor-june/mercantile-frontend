@@ -20,6 +20,13 @@ useEffect(() => {
 
 const loaded = () => {
 
+  const adminTools= (
+    <>
+        <button onClick={handleDelete}>Delete This Listing</button> 
+      <Link to={`/items/update/${item._id}`}>Update Listing</Link>
+    </>
+  )
+console.log(item.uid)
   return (
     <div className='itemShow'>
       <div className='itemImg'>
@@ -33,8 +40,7 @@ const loaded = () => {
 
             <li>LINK TO OWNER PROFILE</li>
       </div>
-      <button onClick={handleDelete}>Delete This Listing</button> 
-      <Link to={`/items/update/${item._id}`}>Update Listing</Link>
+      {props.user.uid===item.uid?adminTools:<></>}
     </div>
   )
 }
