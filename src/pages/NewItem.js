@@ -15,7 +15,9 @@ function NewItem(props) {
         description: '',
         image: '',
         uid:'',
-        zipcode:'' };
+        zipcode:'',
+        user: '',
+        contact: '' };
 
    //state to hold formData
     const [newForm, setNewForm] = useState(formFields);        

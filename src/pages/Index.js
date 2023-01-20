@@ -17,7 +17,7 @@ function Index(props) {
         
         <div className="itemData">
           <li>{item.name}</li>
-
+          <li>{item.user}</li>
           {item.condition ? (
             <div>
               Condition: <li>{item.condition}</li>
@@ -27,7 +27,7 @@ function Index(props) {
         </div>
       </div>
    
-    ));
+    )))
 
 
     return (
