@@ -12,8 +12,9 @@ function Index(props) {
             <img className="itemImg" src={`${item.image}`} />
           </Link>
           <ul>
+          <Link className="index-name" to={`/items/${item._id}`}>
           <li>{item.name}</li>
-          <li>{item.user}</li>
+          </Link>
           <li>{item.condition}</li>
           <li>{item.zipcode}</li>
           </ul>
