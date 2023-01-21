@@ -1,13 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 function About(props) {
   return (
     <div className='about'>
-      <p>Welcome to Mercantile. </p>
-      <p>This application is used in order to trade objects of any value.</p> 
-      <p>The search engine may be used in order to look up items</p>
-      <p> more features to come </p>   
+      <h2>Welcome to Mercantile!</h2>
+      <h3>With Mercantile, you can trade anything. Click <Link to={`/items`}>here
+          </Link> to get started.</h3>
     </div>
   )
 }
