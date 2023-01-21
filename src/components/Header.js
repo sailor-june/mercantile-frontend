@@ -7,18 +7,13 @@ import Distance from "../components/Distance";
 function Header() {
     return (<>
   <div className='header'>
-      
-    <Link to="/"><h1>MERCANTILE</h1></Link>
-    <div className='signin'>
+      <Link className="header-title" to="/"><h1>MERCANTILE</h1></Link>
       <button onClick={login}>Login</button>
-      <button onClick={logout}>Logout</button> </div>
-    <div className='links'>
-       <Link to='/wanted'>View Wanted Ads</Link>
-         Search <Link to ='/items'>Listings</Link>
-         <Link to="/items/new">Create a Listing</Link>
-         </div>
+      <button onClick={logout}>Logout</button> 
+       <Link className="header-link" to='/wanted'>Wanted</Link>
+       <Link className="header-link" to ='/items'>Listings</Link>
+       <Link className="header-link" to="/items/new">Add Listing</Link>
     <Distance />
-
     </div>
     </>
   )

@@ -29,24 +29,23 @@ const loaded = () => {
   const adminTools= (
     <>
         <button onClick={handleDelete}>Delete This Listing</button> 
-      <Link to={`/items/update/${item._id}`}>Update Listing</Link>
+      <Link className="update-button" to={`/items/update/${item._id}`}>Update Listing</Link>
     </>
   )
 console.log(item.uid)
   return (
     <div className='itemShow'>
-      <div className='itemImg'>
+      <div>
         <img src={item.image}/>
-     </div>
-
-      <div className='itemData'>
-            <li>{item.name}</li>
+      </div>
+      <div className="itemData">
+            <h2>{item.name}</h2>
             <li>Condition: {item.condition}</li>
             <span><li>Description: {item.description}</li></span>
             <li>Posted by {item.user}</li>
             <button onClick={mailClick}>Contact</button>
+            {props.user.uid===item.uid?adminTools:<></>}
       </div>
-      {props.user.uid===item.uid?adminTools:<></>}
     </div>
   )
 }
