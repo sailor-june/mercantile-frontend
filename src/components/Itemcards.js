@@ -9,13 +9,14 @@ const Itemcards = (props) => {
         distance: 0
     });
 
-    const [newZipCode, setNewZipCode] = useState({
-        zipcode: null
-    })
+    const [newZipCode, setNewZipCode] = useState(null)
 
     useEffect(() => {
-        setNewDistance(1)
-        setNewZipCode(props.zipCodeInput)
+        // setNewDistance(1)
+        if(props.submitTrigger){
+            setNewZipCode(props.zipCodeInput)
+        }
+        // setNewZipCode(props.zipCodeInput)
         // let zipCodeInputSetter = props.zipCodeInput;
         // searchZipcodes(props.zipCodeInput, 95051);
       }, [props.submitTrigger]);
@@ -28,7 +29,7 @@ const Itemcards = (props) => {
         const options = {
           method: 'GET',
           headers: {
-            'X-RapidAPI-Key': '46b01823dcmsha61ea792f71951bp1f5826jsn9992225378e9',
+            'X-RapidAPI-Key': '79a9551a40msh14b6e8c1cbf50a3p1716bbjsn946b2a78eb77',
             'X-RapidAPI-Host': 'global-zip-codes-with-lat-and-lng.p.rapidapi.com'
           }
         };
@@ -40,7 +41,7 @@ const Itemcards = (props) => {
             .then(json => setNewDistance(json.distance))
             .catch(err => console.error('error:' + err));
 
-        console.log(newDistance)
+        // console.log(newDistance)
         let distanceInfo = JSON.stringify(newDistance);
         return distanceInfo
     }
@@ -67,11 +68,12 @@ const Itemcards = (props) => {
                   zipcode: <li>{item.zipcode}</li>
                 </div>
               ) : null}
-              {(item.zipcode && newZipCode && (props.submitTrigger > 9)) ? (
+              {(item.zipcode && newZipCode) ? (
                 <div>
                   Distance: <li>{searchZipcodes(newZipCode, item.zipcode)} meters</li>
                   {console.log(`newDistance: ${newDistance}`)}
                   {console.log(`submitTrigger: ${props.submitTrigger}`)}
+                  {console.log(`newZipCode: ${newZipCode}`)}
                 </div>
               ) : null}
             </div>

@@ -18,9 +18,7 @@ function Index(props) {
     })
     // let formZipCode = null;
 
-    const [newSubmitTrigger, setNewSubmitTrigger] = useState({
-      submitTriger: 0
-    })
+    const [newSubmitTrigger, setNewSubmitTrigger] = useState(0)
 
 
 
@@ -36,7 +34,7 @@ function Index(props) {
         // setNewForm({...newForm, [newForm.zipcode1]: newForm.zipcode1})
         setNewFormZipCode (newForm.zipcode1)
         console.log(newForm.zipcode1)
-        setNewSubmitTrigger(10)
+        setNewSubmitTrigger(newSubmitTrigger + 1)
         // setNewFormZipCode(95051)
         // searchZipcodes(newForm.zipcode1, itemZip)
         // return newForm.zipcode1
