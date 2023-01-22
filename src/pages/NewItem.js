@@ -13,6 +13,7 @@ function NewItem(props) {
 
     const formFields = {
 
+
         name: '',
         condition: '',
         description: '',
@@ -22,12 +23,16 @@ function NewItem(props) {
         user: '',
         contact: '' };
 
+
    //state to hold formData
     const [newForm, setNewForm] = useState(formFields);        
     //handleChange function for form    
     const handleChange = (event) => {
             setNewForm({
+       
+
                 ...newForm, [event.target.name]: event.target.value, uid: props.user.uid})    };        
+
     //handleSubmit function for form    
     const handleSubmit = async(event) => {    
         event.preventDefault();
