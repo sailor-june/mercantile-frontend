@@ -1,9 +1,10 @@
 import React from 'react'
-import Item from '../components/Item'
+import Itemcards from '../components/Item'
 import { Link } from 'react-router-dom'
 import { useState } from "react"
 import Distance from '../components/Distance'
 import Item from '../components/Item'
+
 
 const fetch = require('node-fetch');
 
@@ -54,7 +55,7 @@ const loaded = () => {
       </div>
    
     )))
-
+     return(itemList)}
 
      const loading = () => {
     <div>Loading...</div>;
@@ -76,11 +77,11 @@ const loaded = () => {
         </form>
       </section>
     </div>
-    {/* <div className='container'>
+    <div className='container'>
       {props.items? loaded(): loading}
-    </div> */}
-    <Itemcards items={props.items} zipCodeInput={newFormZipCode} submitTrigger={newSubmitTrigger}/>
+    </div>
+ 
     </>
   )
-
+  }
 export default Index;
