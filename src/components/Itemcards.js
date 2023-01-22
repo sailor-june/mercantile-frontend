@@ -47,9 +47,9 @@ const Itemcards = (props) => {
     }
     const loaded = () => {
 
-      const itemList = (props.items.map((item)=>(
+      const itemList = (props.item.map((item)=>(
  
-       <div className="itemCard" key={item._id}>
+       <div className="itemCard">
            <Link to={`/items/${item._id}`}>
              <img className="itemImg" src={`${item.image}`} />
            </Link>
@@ -57,7 +57,9 @@ const Itemcards = (props) => {
            <Link className="index-name" to={`/items/${item._id}`}>
            <li>{item.name}</li>
            </Link>
-           <li>{item.condition}</li>
+           {props.item.condition ? (
+            <>Condition: 
+            <li>{item.condition}</li></>):null}
            <li>{item.zipcode}</li>
            {(item.zipcode && newZipCode) ? (
                 <div>

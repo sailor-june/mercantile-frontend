@@ -27,25 +27,36 @@ const handleSubmit = (event) => {
 const loaded = () => {
     return (
         <section className="itemUpdate">
+          
+
         <form onSubmit={handleSubmit}>
+          <label for=""></label>
           <input
             type="text"
             name="name"
             onChange={handleChange}
             value={editForm.name}
           />
+          <label for="description"> Item Description</label>
           <input
             type="text"
             name="description"
             onChange={handleChange}
             value={editForm.description}
           />
-          <input
-            type="text"
-            name="condition"
-            onChange={handleChange}
-            value={editForm.condition}
-          />
+          <label for="condition">Condition:</label>
+        <select value={editForm.condition}
+        defaultValue={item.condition}
+        name="condition"
+        onChange={handleChange}>
+
+            <option value="new" >new</option>
+            <option value="good">good</option>
+            <option value="fair">fair</option>
+            <option value="used">used</option>
+        
+        </select>
+        <label for="image">Link to image</label>
           <input
             type="text"
             name="image"

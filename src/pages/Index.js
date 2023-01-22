@@ -11,28 +11,28 @@ const fetch = require('node-fetch');
 
 function Index(props) {
   
-    const [newForm, setNewForm] = useState({
-    });
+  
 
-    const [newFormZipCode, setNewFormZipCode] = useState({
-      formZipCode: 95051
+  const [newZip, setNewZip] = useState({
+      zipcode: 95051
     })
 
-    const [newSubmitTrigger, setNewSubmitTrigger] = useState(0)
+const [zipForm, setZipForm] = useState({newZip})
+    
+  
 
 
-
-    const handleChange = event => {
-        setNewForm({...newForm, [event.target.name]: event.target.value})
+    const handleChange = (event) => {
+        setZipForm((prevState)=>({
+          ...prevState,
+          [event.target.name]: event.target.value}))
     }
 
 
-    const handleSubmit = event => {
+    const handleZip = event => {
         event.preventDefault();
-   
-        setNewFormZipCode (newForm.zipcode1)
-        console.log(newForm.zipcode1)
-        setNewSubmitTrigger(newSubmitTrigger + 1)
+        setNewZip(()=>({...zipForm}))
+        console.log(newZip.zipcode)
         
 
 
@@ -40,20 +40,9 @@ function Index(props) {
 const loaded = () => {
 
      const itemList = (props.items.map((item)=>(
-
-      <div className="itemCard" key={item._id}>
-          <Link to={`/items/${item._id}`}>
-            <img className="itemImg" src={`${item.image}`} />
-          </Link>
-          <ul>
-          <Link className="index-name" to={`/items/${item._id}`}>
-          <li>{item.name}</li>
-          </Link>
-          <li>{item.condition}</li>
-          <li>{item.zipcode}</li>
-          </ul>
-      </div>
-   
+<>
+      <Item item={item} key={item._id} userzip={newZip.zipcode} />
+  </> 
     )))
      return(itemList)}
 
@@ -65,11 +54,11 @@ const loaded = () => {
     <>
     <div className='zipcodeForm'>
       <section>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleZip}>
           <input 
               type='text' 
-              value={newForm.zipcode1}
-              name="zipcode1"
+              value={zipForm.zipcode}
+              name="zipcode"
               placeholder="zipcode"
               onChange={handleChange}
           />

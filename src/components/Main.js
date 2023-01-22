@@ -22,18 +22,18 @@ function Main(props) {
   const URL = "https://mercantile.herokuapp.com/";
 
 
-  const getUser= async()=>{
-    const token= await props.user.getIdToken()
-    const response = await fetch(URL+"users",{
-      method: 'GET',
-      headers: {
-        'Authorization' : 'Bearer ' + token 
-      }
-    })
-    const data= await response.json();
+  // const getUser= async()=>{
+  //   const token= await props.user.getIdToken()
+  //   const response = await fetch(URL+"users",{
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization' : 'Bearer ' + token 
+  //     }
+  //   })
+  //   const data= await response.json();
    
-    setUser(data)
-  }
+  //   setUser(data)
+  // }
 
   const getItems = async () => {
     const response = await fetch(URL + "items");
@@ -81,12 +81,12 @@ function Main(props) {
     getItems();
   }, []);
   
-  useEffect(()=>{
-    if (props.user){
-      getUser()
+  // useEffect(()=>{
+  //   if (props.user){
+  //     getUser()
 
-    }
-  },[props.user])
+  //   }
+  // },[props.user])
 
 
   return (
