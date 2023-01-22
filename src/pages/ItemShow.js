@@ -10,13 +10,8 @@ const navigate = useNavigate();
 const item = props.items ? props.items.find((item)=>item._id === id):null;
 
 
-const [editForm, setEditForm] = useState(item)
 
-useEffect(() => {
-  if(item) {
-    setEditForm(item)
-  }
-}, [item])
+
 
   const mailClick = () => {
     const mailtoLink = document.createElement('a');

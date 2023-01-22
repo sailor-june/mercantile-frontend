@@ -50,13 +50,16 @@ function NewItem(props) {
 
         <label for="condition">Condition:</label>
         <select value={newForm.condition}
+        defaultValue="good"
         name="condition"
         onChange={handleChange}>
+
 
             <option value="new" >New</option>
             <option selected value="good">Good</option>
             <option value="fair">Fair</option>
             <option value="used">Used</option>
+
         
         </select>
         <label for="description">Description:</label>
@@ -82,9 +85,7 @@ function NewItem(props) {
           className="hidden" 
           onChange={handleChange}
         />
-        <input type="submit" value="create item" />
-
-
+        
         <input
           type="text"
           value={newForm.image}
