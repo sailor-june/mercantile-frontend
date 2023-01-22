@@ -104,13 +104,22 @@ body {
   background-color: cadetblue;
   box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 10px rgb(117, 195, 197), -2px -2px 5px rgb(47, 79, 81) inset, 2px 2px 5px rgb(139,232,235) inset;
   border-radius: 25px;
+  margin: 1em;
+  ul {
+    display: block;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
   
   li {
     text-align: center;
-    width: 10rem;
+    width: 15rem;
     list-style-type: none;
     margin-top: 5px;
-    overflow: auto;
+    overflow: none;
     box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 5px rgb(139, 232, 235);
   }
 }
