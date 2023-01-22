@@ -34,7 +34,7 @@ const loaded = () => {
             onChange={handleChange}
             value={editForm.name}
           />
-          <input
+          <textarea
             type="text"
             name="description"
             onChange={handleChange}

@@ -40,18 +40,19 @@ function Index(props) {
 const loaded = () => {
 
      const itemList = (props.items.map((item)=>(
-
-      <div className="itemCard" key={item._id}>
-          <Link to={`/items/${item._id}`}>
-            <img className="itemImg" src={`${item.image}`} />
-          </Link>
-          <ul>
-          <Link className="index-name" to={`/items/${item._id}`}>
-          <li>{item.name}</li>
-          </Link>
-          <li>{item.condition}</li>
-          <li>{item.zipcode}</li>
-          </ul>
+      <div className="index">
+        <div className="itemCard" key={item._id}>
+            <Link to={`/items/${item._id}`}>
+              <img className="itemImg" src={`${item.image}`} />
+            </Link>
+            <ul>
+            <Link className="index-name" to={`/items/${item._id}`}>
+            <li>{item.name}</li>
+            </Link>
+            <li>{item.condition}</li>
+            <li>{item.zipcode}</li>
+            </ul>
+        </div>
       </div>
    
     )))
