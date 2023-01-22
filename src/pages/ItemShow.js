@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
-import Distance from '../components/Distance';
-
-
+import { useState, useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import Distance from "../components/Distance";
 
 const ItemShow = (props) => {
+
+
 const { id } = useParams();
 const navigate = useNavigate();
 const item = props.items ? props.items.find((item)=>item._id === id):null;

@@ -19,16 +19,14 @@ function Distance (props) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        searchZipcodes(newForm.zipcode1)
- 
+        searchZipcodes(newForm.zipcode1, '67207')
     }
 
     const [newDistance, setNewDistance] = useState({
         distance: 0
     });
 
-    function searchZipcodes (zipcode1){
-        let zipcode2 = '95051'
+    function searchZipcodes (zipcode1, zipcode2){
     
         const url = `https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distanceByPostalCodes?postal_code1=${zipcode1}&postal_code2=${zipcode2}`;
     

@@ -1,9 +1,43 @@
-import React from "react";
-import Item from "../components/Item";
-import { Link } from "react-router-dom";
+import React from 'react'
+import Itemcards from '../components/Item'
+import { Link } from 'react-router-dom'
+import { useState } from "react"
+import Distance from '../components/Distance'
+import Item from '../components/Item'
+
+
+const fetch = require('node-fetch');
+
 
 function Index(props) {
-  const loaded = () => {
+  
+    const [newForm, setNewForm] = useState({
+    });
+
+    const [newFormZipCode, setNewFormZipCode] = useState({
+      formZipCode: 95051
+    })
+
+    const [newSubmitTrigger, setNewSubmitTrigger] = useState(0)
+
+
+
+    const handleChange = event => {
+        setNewForm({...newForm, [event.target.name]: event.target.value})
+    }
+
+
+    const handleSubmit = event => {
+        event.preventDefault();
+   
+        setNewFormZipCode (newForm.zipcode1)
+        console.log(newForm.zipcode1)
+        setNewSubmitTrigger(newSubmitTrigger + 1)
+        
+
+
+    }
+const loaded = () => {
 
      const itemList = (props.items.map((item)=>(
       <div className="index">
@@ -22,21 +56,33 @@ function Index(props) {
       </div>
    
     )))
+     return(itemList)}
 
-
-    return (
-      <div className="container">
-        
-        {itemList}
-      </div>
-    );
-  };
-  const loading = () => {
+     const loading = () => {
     <div>Loading...</div>;
   };
 
-  return <div className="container">{props.items ? loaded() : loading}</div>;
-
-}
-
+  return (
+    <>
+    <div className='zipcodeForm'>
+      <section>
+        <form onSubmit={handleSubmit}>
+          <input 
+              type='text' 
+              value={newForm.zipcode1}
+              name="zipcode1"
+              placeholder="zipcode"
+              onChange={handleChange}
+          />
+          <input type="submit" value="submit zipcode"/>
+        </form>
+      </section>
+    </div>
+    <div className='container'>
+      {props.items? loaded(): loading}
+    </div>
+ 
+    </>
+  )
+  }
 export default Index;
