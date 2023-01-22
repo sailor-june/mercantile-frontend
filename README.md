@@ -43,9 +43,9 @@ Mercantile uses Google Firebase for user authentication. Clicking Login in the H
 Mercantile also uses the Redline Zipcode API to show how far away items are, using the optional zipcode input users can add to their listing. 
 
 ## Screenshots
-[!screenshot1](https://i.imgur.com/jBBQ1lb.jpg)
-[!screenshot2](https://i.imgur.com/qUl29P2.jpg)
-[!screenshot3](https://i.imgur.com/1M0Jwva.jpg)
+![screenshot1](https://i.imgur.com/jBBQ1lb.jpg)
+![screenshot2](https://i.imgur.com/qUl29P2.jpg)
+![screenshot3](https://i.imgur.com/1M0Jwva.jpg)
 
 ## Future Enhancements
 *Expanded messaging/communication, in-app messaging rather than relying on external email contact. 
