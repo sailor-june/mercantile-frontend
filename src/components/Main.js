@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { auth } from "../firebase";
@@ -17,7 +18,8 @@ function Main(props) {
   const [items, setItems] = useState(null);
   const [user, setUser] = useState();
 
-  const URL = "http://localhost:4000/";
+
+  const URL = "https://mercantile.herokuapp.com/";
 
 
   const getUser= async()=>{
@@ -40,12 +42,15 @@ function Main(props) {
   };
 
   const createItem = async (item) => {
- 
+    if (!props.user) return;
+    const token = await props.user.getIdToken();
+
     //make post request to create item
     await fetch(URL + "items/new", {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
+        "Authorization": "Bearer "+token
       },
       body: JSON.stringify(item),
     });
@@ -91,7 +96,8 @@ function Main(props) {
 
         <Route
           path="/items/:id"
-          element={<ItemShow items={items} deleteItem={deleteItem} user={props.user}/>}
+          element={<ItemShow items={items} deleteItem={deleteItem} user={props.user} />}
+
         />
 
         <Route
