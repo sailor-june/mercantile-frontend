@@ -16,11 +16,17 @@ function Main(props) {
  
 
   const [items, setItems] = useState(null);
+  const [wanted, setWanted] = useState(null)
   const [user, setUser] = useState();
 
 
-  const URL = "https://mercantile.herokuapp.com/";
+  const URL = "http://localhost:4000/";
 
+  const getWanted = async() => {
+    const response = await fetch(URL + "wanted")
+    const data = await response.json()
+    setWanted(data)
+  }
 
   const getUser= async()=>{
     const token= await props.user.getIdToken()
@@ -78,6 +84,10 @@ function Main(props) {
   };
 
   useEffect(() => {
+    getWanted()
+  }, [])
+
+  useEffect(() => {
     getItems();
   }, []);
   
@@ -105,7 +115,7 @@ function Main(props) {
           element={<Update items={items} updateItem={updateItem} user={props.user}/>}
         />
 
-        <Route path="/wanted" element={<Wanted user={props.user}/>} />
+        <Route path="/wanted" element={<Wanted wanted={wanted}/>} />
         <Route path="/about" element={<About user={props.user}/>} />
         <Route
           path="/items/new"
