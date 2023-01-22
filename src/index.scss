@@ -43,10 +43,8 @@ body {
 
 .itemData {
   list-style-type: none;
-
   font-family: 'Roboto', sans-serif;
   color: white;
-
   height: 20em;
   width: 20em;
   display: flex;
@@ -156,8 +154,7 @@ body {
   justify-content: space-around;
   background-color: rgba(27, 27, 50, 0.8);
   border-bottom: 3px solid cadetblue;
-  margin-bottom: 10%;
-  margin-top: 0;
+  margin-bottom: 5%;
 }
 
 .header-link {
@@ -209,6 +206,7 @@ body {
   border-radius: 5px;
 }
 
+
 .footer {
   height: 50px;
   font-family: "Roboto", sans-serif;
@@ -219,10 +217,6 @@ body {
   align-items: center;
   background-color: rgba(27, 27, 50, 0.8);
   margin-top: 10%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   border-top: 3px solid cadetblue;
 }
 
@@ -295,8 +289,9 @@ body {
 
 .description-input {
   resize: none;
-  width: 30em;
+  width: 25em;
   height: 10em;
+  font-family: inherit;
 }
 
 
@@ -348,10 +343,12 @@ body {
 
 .itemUpdate form textarea {
   resize: none;
-  width: 30em;
+  width: 25em;
   height: 10em;
   font-family: inherit;
   margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .about {
@@ -390,3 +387,66 @@ body {
   display: none;
 }
 
+.zipcodeForm {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+.zipcodeForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+::placeholder {
+  text-align: center; 
+}
+
+.zipcodeForm form label {
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid cadetblue;
+  margin-bottom: 0.5rem;
+}
+
+.zipcodeForm form input {
+  border: 2px solid cadetblue;
+}
+
+.distance-button {
+  font-size: inherit;
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #5f9ea0;
+    box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 5px rgb(139, 232, 235);
+    width: 5rem;
+    margin-top: 0.5rem;
+    height: 20px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.far-button {
+  font-size: inherit;
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #5f9ea0;
+  box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 5px rgb(139, 232, 235);
+  width: 6rem;
+  margin-top: 0.5rem;
+  height: 20px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}

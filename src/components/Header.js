@@ -13,7 +13,6 @@ function Header() {
        <Link className="header-link" to='/wanted'>Wanted</Link>
        <Link className="header-link" to ='/items'>Listings</Link>
        <Link className="header-link" to="/items/new">Add Listing</Link>
-    <Distance />
     </div>
     </>
   )
