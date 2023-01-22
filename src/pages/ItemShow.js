@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import Distance from '../components/Distance';
 
 
@@ -18,61 +18,34 @@ useEffect(() => {
   }
 }, [item])
 
-const handleChange = (event) => {
-  setEditForm({...editForm, [event.target.name]: event.target.value })
-}
-
-const handleSubmit = (event) => {
-  event.preventDefault();
-  props.updateItem(id, editForm)
-}
+  const mailClick = () => {
+    const mailtoLink = document.createElement('a');
+    mailtoLink.href = `mailto:${item.contact}`;
+    mailtoLink.click();
+  };
 
 const loaded = () => {
 
+  const adminTools= (
+    <>
+        <button onClick={handleDelete}>Delete This Listing</button> 
+      <Link className="update-button" to={`/items/update/${item._id}`}>Update Listing</Link>
+    </>
+  )
+console.log(item.uid)
   return (
     <div className='itemShow'>
-      <div className='itemImg'>
+      <div>
         <img src={item.image}/>
-     </div>
-
-      <div className='itemData'>
-            <li>{item.name}</li>
-            <li>condition: {item.condition}</li>
-            <span><li>description: {item.description}</li></span>
-
-            <li>LINK TO OWNER PROFILE</li>
       </div>
-      <button onClick={handleDelete}>Delete This Listing</button> 
-
-      <section className="itemUpdate">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            onChange={handleChange}
-            value={editForm.name}
-          />
-          <input
-            type="text"
-            name="description"
-            onChange={handleChange}
-            value={editForm.description}
-          />
-          <input
-            type="text"
-            name="condition"
-            onChange={handleChange}
-            value={editForm.condition}
-          />
-          <input
-            type="text"
-            name="image"
-            onChange={handleChange}
-            value={editForm.image}
-          />
-          <input type="submit" value="Update Listing" />
-        </form>  
-      </section>       
+      <div className="itemData">
+            <h2>{item.name}</h2>
+            <li>Condition: {item.condition}</li>
+            <span><li>Description: {item.description}</li></span>
+            <li>Posted by {item.user}</li>
+            <button onClick={mailClick}>Contact</button>
+            {props.user.uid===item.uid?adminTools:<></>}
+      </div>
     </div>
   )
 }
@@ -83,7 +56,7 @@ const loading = () => {
 
 const handleDelete = () => {
   props.deleteItem(id)
-  navigate('/')
+  navigate('/items')
 }
 
 return (
