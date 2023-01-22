@@ -20,7 +20,8 @@ function NewItem(props) {
         uid:'',
         zipcode:'',
         user: '',
-        contact: '' };
+        contact: ''
+    }
 
    //state to hold formData
     const [newForm, setNewForm] = useState(formFields);        
@@ -43,7 +44,6 @@ function NewItem(props) {
           type="text"
           value={newForm.name}
           name="name"
-          placeholder="name"
           onChange={handleChange}
         />
 
@@ -54,21 +54,23 @@ function NewItem(props) {
         name="condition"
         onChange={handleChange}>
 
-            <option value="new" >new</option>
-            <option  value="good">good</option>
-            <option value="fair">fair</option>
-            <option value="used">used</option>
+
+            <option value="new" >New</option>
+            <option selected value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="used">Used</option>
+
         
         </select>
-        <label for="description">Description </label>
-        <input
+        <label for="description">Description:</label>
+        <textarea
+          className="description-input"
           type="text"
           value={newForm.description}
           name="description"
-          placeholder="description"
           onChange={handleChange}
         />
-
+        <label for="image">Image:</label>
         <input
           type="text"
           value={newForm.zipcode}
@@ -88,7 +90,7 @@ function NewItem(props) {
           type="text"
           value={newForm.image}
           name="image"
-          placeholder="link to image"
+          placeholder="Paste URL here"
           onChange={handleChange}
         />
 

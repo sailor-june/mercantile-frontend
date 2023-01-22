@@ -36,7 +36,7 @@ console.log(item.uid)
       <div className="itemData">
             <h2>{item.name}</h2>
             <li>Condition: {item.condition}</li>
-            <span><li>Description: {item.description}</li></span>
+            <span><li>{item.description}</li></span>
             <li>Posted by {item.user}</li>
             <button onClick={mailClick}>Contact</button>
             {props.user.uid===item.uid?adminTools:<></>}

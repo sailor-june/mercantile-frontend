@@ -40,9 +40,11 @@ const [zipForm, setZipForm] = useState({newZip})
 const loaded = () => {
 
      const itemList = (props.items.map((item)=>(
+
 <>
       <Item item={item} key={item._id} userzip={newZip.zipcode} />
   </> 
+
     )))
      return(itemList)}
 
