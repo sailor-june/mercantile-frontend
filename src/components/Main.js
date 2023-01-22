@@ -20,7 +20,7 @@ function Main(props) {
   const [user, setUser] = useState();
 
 
-  const URL = "http://localhost:4000/";
+  const URL = "https://mercantile.herokuapp.com/";
 
   const getWanted = async() => {
     const response = await fetch(URL + "wanted")
