@@ -48,9 +48,9 @@ Mercantile also uses the Redline Zipcode API to show how far away items are, usi
 ![screenshot3](https://i.imgur.com/1M0Jwva.jpg)
 
 ## Future Enhancements
-*Expanded messaging/communication, in-app messaging rather than relying on external email contact. 
+* Expanded messaging/communication, in-app messaging rather than relying on external email contact. 
 
-*Expanded user profile functionality. See your profile information, previous listings, exchanges, saved messages, saved items. 
+* Expanded user profile functionality. See your profile information, previous listings, exchanges, saved messages, saved items. 
 
-*Further debugging on location feature
+* Further debugging on location feature
 
