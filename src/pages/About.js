@@ -11,7 +11,7 @@ function About(props) {
           </Link> to get started.</h3>
       </div>
       <div>
-        <h4>Built by June James, Reiny Botros, Claude Allen, and Robert Johnson</h4>
+        <h4>Built by Juniper James, Reiny Botros, Claude Allen, and Robert Johnson</h4>
         <p><a href="https://github.com/robjawn/mercantile-backend">Link</a> to Mercantile's Backend Repo</p>
         <p><a href="https://github.com/robjawn/mercantile-frontend">Link</a> to Mercantile's Frontend Repo</p>
       </div>
