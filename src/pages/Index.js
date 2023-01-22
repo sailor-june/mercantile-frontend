@@ -8,15 +8,13 @@ function Index(props) {
      const itemList = (props.items.map((item)=>(
 
       <div className="itemCard" key={item._id}>
-        
           <Link to={`/items/${item._id}`}>
-          <div className="itemImg">
-            <img src={`${item.image}`} />
-          </div>
+            <img className="itemImg" src={`${item.image}`} />
           </Link>
           <ul>
+          <Link className="index-name" to={`/items/${item._id}`}>
           <li>{item.name}</li>
-          <li>{item.user}</li>
+          </Link>
           <li>{item.condition}</li>
           <li>{item.zipcode}</li>
           </ul>
