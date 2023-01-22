@@ -55,18 +55,17 @@ const loaded = () => {
   return (
     <>
     <div className='zipcodeForm'>
-      <section>
         <form onSubmit={handleZip}>
+          <label for="zipcode">See distance to listings</label>
           <input 
               type='text' 
               value={zipForm.zipcode}
               name="zipcode"
-              placeholder="zipcode"
+              placeholder="Enter a valid zipcode"
               onChange={handleChange}
           />
-          <input type="submit" value="submit zipcode"/>
+          <input className="distance-button" type="submit" value="submit"/>
         </form>
-      </section>
     </div>
     <div className='container'>
       {props.items? loaded(): loading}

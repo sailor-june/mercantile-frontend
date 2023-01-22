@@ -52,7 +52,7 @@ function Item(props) {
 
           <li>{props.item.zipcode}</li>
           {props.userzip && props.item.zipcode ? (
-            <><button onClick={searchZipcodes}>how far?</button>
+            <><button className="far-button" onClick={searchZipcodes}>How Far?</button>
             <p></p>
             </>
           ) : null}
