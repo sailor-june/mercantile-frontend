@@ -1,9 +1,12 @@
 import { useState } from "react";
+
 import { useNavigate } from 'react-router-dom';
   import { auth } from "../firebase";
   import { getAuth } from "firebase/auth"; 
 
 function NewItem(props) {
+  const [user, setUser]=useState(null)
+
 
   const navigate = useNavigate()
   
@@ -67,6 +70,23 @@ function NewItem(props) {
 
         <input
           type="text"
+          value={newForm.zipcode}
+          name="zipcode"
+          placeholder="zipcode"
+          onChange={handleChange}
+        />
+        <input 
+          type="text"
+          value={newForm.user}
+          name="user"
+          className="hidden" 
+          onChange={handleChange}
+        />
+        <input type="submit" value="create item" />
+
+
+        <input
+          type="text"
           value={newForm.image}
           name="image"
           placeholder="link to image"
@@ -75,6 +95,7 @@ function NewItem(props) {
 
 
         <input type="submit" value="Create Listing" />
+
       </form>
     </div>
     </>
