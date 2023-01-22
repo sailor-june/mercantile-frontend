@@ -1,12 +1,10 @@
 import React from 'react'
-import Itemcards from '../components/Item'
-import { Link } from 'react-router-dom'
+
 import { useState } from "react"
-import Distance from '../components/Distance'
+
 import Item from '../components/Item'
 
 
-const fetch = require('node-fetch');
 
 
 function Index(props) {
@@ -49,30 +47,32 @@ const loaded = () => {
      return(itemList)}
 
      const loading = () => {
-    <div>Loading...</div>;
+    <div key="loading">Loading...</div>;
   };
 
   return (
+    
+    
     <>
-    <div className='zipcodeForm'>
-      <section>
-        <form onSubmit={handleZip}>
+      <div className='zipcodeForm' key="zipform">
+      
+        <form onSubmit={handleZip}key='handlezip'>
           <input 
               type='text' 
               value={zipForm.zipcode}
               name="zipcode"
+              key='input'
               placeholder="zipcode"
               onChange={handleChange}
           />
-          <input type="submit" value="submit zipcode"/>
+          <input key='handlesubmit' type="submit" value="submit zipcode"/>
         </form>
-      </section>
-    </div>
-    <div className='container'>
+      
+    </div><div className='container' key='container'>
       {props.items? loaded(): loading}
     </div>
- 
-    </>
+ </>
+    
   )
   }
 export default Index;
