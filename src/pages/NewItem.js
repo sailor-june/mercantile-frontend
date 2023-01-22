@@ -70,12 +70,11 @@ function NewItem(props) {
           name="description"
           onChange={handleChange}
         />
-        <label for="image">Image:</label>
+        <label for="zipcode">Zipcode:</label>
         <input
           type="text"
           value={newForm.zipcode}
           name="zipcode"
-          placeholder="zipcode"
           onChange={handleChange}
         />
         <input 
@@ -85,7 +84,7 @@ function NewItem(props) {
           className="hidden" 
           onChange={handleChange}
         />
-        
+        <label for="image">Image:</label>
         <input
           type="text"
           value={newForm.image}
