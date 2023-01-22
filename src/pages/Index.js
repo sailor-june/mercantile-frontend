@@ -53,7 +53,7 @@ const loaded = () => {
     <>
       <div className='zipcodeForm' key="zipform">
      <form onSubmit={handleZip}key='handlezip'>
-     <label for="zipcode">See distance to listings</label>    
+     <label>See distance to listings</label>    
 
           <input 
               type='text' 

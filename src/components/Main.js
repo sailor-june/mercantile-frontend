@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-
+import Wanted from "../pages/Wanted";
 import Index from "../pages/Index";
 import About from "../pages/About";
 import ItemShow from "../pages/ItemShow";
@@ -79,7 +79,7 @@ function Main(props) {
   return (
     <main>
       <Routes>
-        <Route path="/items" element={<Index items={items} />} />
+        <Route path="/items" element={<Index items={items} user={props.user}/>} />
 
         <Route
           path="/items/:id"

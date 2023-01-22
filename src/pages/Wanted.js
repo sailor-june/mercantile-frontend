@@ -11,10 +11,10 @@ function Wanted(props) {
           </div>
         </Link>
         <ul>
-          <li>{wanted.name}</li>
-          <li>{wanted.contact}</li>
-          <li>{wanted.description}</li>
-          <li>{wanted.zipcode}</li>
+          <li key="name">{wanted.name}</li>
+          <li key="contact">{wanted.contact}</li>
+          <li key='desc'>{wanted.description}</li>
+          <li key='zip'>{wanted.zipcode}</li>
         </ul>
       </div>
     ));

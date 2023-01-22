@@ -9,6 +9,7 @@ import AboutPage from './pages/About';
 import { auth } from './firebase';
 import { Routes, Route } from 'react-router-dom';
 import {onAuthStateChanged} from 'firebase/auth'
+import Wanted from './pages/Wanted';
 
 function App() {
   const [user, setUser] = useState(null);
