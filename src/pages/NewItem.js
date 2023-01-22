@@ -41,7 +41,6 @@ function NewItem(props) {
           type="text"
           value={newForm.name}
           name="name"
-          placeholder="name"
           onChange={handleChange}
         />
 
@@ -57,20 +56,20 @@ function NewItem(props) {
             <option value="used">Used</option>
         
         </select>
-        <label for="description">Description </label>
-        <input
+        <label for="description">Description:</label>
+        <textarea
+          className="description-input"
           type="text"
           value={newForm.description}
           name="description"
-          placeholder="description"
           onChange={handleChange}
         />
-
+        <label for="image">Image:</label>
         <input
           type="text"
           value={newForm.image}
           name="image"
-          placeholder="link to image"
+          placeholder="Paste URL here"
           onChange={handleChange}
         />
 

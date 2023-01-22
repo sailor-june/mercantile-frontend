@@ -17,7 +17,7 @@ function Main(props) {
   const [items, setItems] = useState(null);
   const [user, setUser] = useState(null);
 
-  const URL = "http://localhost:4000/";
+  const URL = "https://mercantile.herokuapp.com/";
 
 
   const getUser= async()=>{
