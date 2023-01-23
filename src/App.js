@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import AboutPage from './pages/About';
-import { auth } from './firebase';
+import { auth, login, logout } from './firebase';
 import { Routes, Route } from 'react-router-dom';
 import {onAuthStateChanged} from 'firebase/auth'
 import Wanted from './pages/Wanted';
@@ -21,7 +21,7 @@ function App() {
   
   return (
     <div className="App">
-      <Header user={user}/>
+      <Header user={user} login={ login } logout={ logout }/>
       <Main user={user}/>
       <Footer />
     </div>

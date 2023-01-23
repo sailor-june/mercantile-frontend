@@ -42,7 +42,7 @@ const ItemShow = (props) => {
           </span>
           <li key="author">Posted by {item.user}</li>
           <button onClick={mailClick}>Contact</button>
-          {props.user && props.user.uid === item.uid ? adminTools : <></>}
+          {(props.user && props.user.uid === item.uid) ? adminTools : <></>}
         </div>
       </div>
     );

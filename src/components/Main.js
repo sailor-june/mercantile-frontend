@@ -94,7 +94,7 @@ function Main(props) {
 
         <Route
         path="/wanted"
-        element={<Wanted wanted={wanted}/>}
+        element={<Wanted wanted={wanted} items={items}/>}
         />
         
         <Route

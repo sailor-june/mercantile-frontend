@@ -9,7 +9,7 @@ function Index(props) {
   
 
   const [newZip, setNewZip] = useState({
-      zipcode: 95051
+      zipcode: null
     })
 
 const [zipForm, setZipForm] = useState({newZip})
@@ -24,7 +24,7 @@ const [zipForm, setZipForm] = useState({newZip})
     }
 
 
-    const handleZip = event => {
+    const handleZip = (event) => {
         event.preventDefault();
         setNewZip(()=>({...zipForm}))
         console.log(newZip.zipcode)
@@ -36,9 +36,9 @@ const loaded = () => {
 
      const itemList = (props.items.map((item)=>(
 
-<>
-      <Item item={item} key={item._id} userzip={newZip.zipcode} />
-  </> 
+<React.Fragment key={item._id}>
+      <Item item={item}  userzip={newZip.zipcode} />
+  </React.Fragment> 
 
     )))
      return(itemList)}
@@ -67,7 +67,7 @@ const loaded = () => {
         </form>
       
     </div><div className='container' key='container'>
-      {props.items? loaded(): loading}
+      {props.items? loaded(): loading()}
     </div>
  </>
     

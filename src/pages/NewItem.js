@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 import { useNavigate } from 'react-router-dom';
-  import { auth } from "../firebase";
-  import { getAuth } from "firebase/auth"; 
+
 
 function NewItem(props) {
   const [user, setUser]=useState(null)
