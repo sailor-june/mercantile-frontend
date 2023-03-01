@@ -36,13 +36,13 @@ const ItemShow = (props) => {
         </div>
         <div className="itemData">
           <h2>{item.name}</h2>
-          <li>Condition: {item.condition}</li>
+          <li key='cond'>Condition: {item.condition}</li>
           <span>
-            <li>{item.description}</li>
+            <li key='desc'>{item.description}</li>
           </span>
-          <li>Posted by {item.user}</li>
+          <li key="author">Posted by {item.user}</li>
           <button onClick={mailClick}>Contact</button>
-          {props.user.uid === item.uid ? adminTools : <></>}
+          {(props.user && props.user.uid === item.uid) ? adminTools : <></>}
         </div>
       </div>
     );
@@ -57,6 +57,6 @@ const ItemShow = (props) => {
     navigate("/items");
   };
 
-  return <section>{props.items &&props.user ? loaded : loading}</section>;
+  return <section>{props.items? loaded() : loading}</section>;
 };
 export default ItemShow;

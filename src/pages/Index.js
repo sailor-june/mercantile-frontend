@@ -4,15 +4,12 @@ import { useState } from "react"
 
 import Item from '../components/Item'
 
-
-
-
 function Index(props) {
   
   
 
   const [newZip, setNewZip] = useState({
-      zipcode: 95051
+      zipcode: null
     })
 
 const [zipForm, setZipForm] = useState({newZip})
@@ -27,7 +24,7 @@ const [zipForm, setZipForm] = useState({newZip})
     }
 
 
-    const handleZip = event => {
+    const handleZip = (event) => {
         event.preventDefault();
         setNewZip(()=>({...zipForm}))
         console.log(newZip.zipcode)
@@ -39,9 +36,9 @@ const loaded = () => {
 
      const itemList = (props.items.map((item)=>(
 
-<>
-      <Item item={item} key={item._id} userzip={newZip.zipcode} />
-  </> 
+<React.Fragment key={item._id}>
+      <Item item={item}  userzip={newZip.zipcode} />
+  </React.Fragment> 
 
     )))
      return(itemList)}
@@ -55,21 +52,22 @@ const loaded = () => {
     
     <>
       <div className='zipcodeForm' key="zipform">
-      
-        <form onSubmit={handleZip}key='handlezip'>
+     <form onSubmit={handleZip}key='handlezip'>
+     <label>See distance to listings</label>    
+
           <input 
               type='text' 
               value={zipForm.zipcode}
               name="zipcode"
               key='input'
-              placeholder="zipcode"
+              placeholder="Enter a valid zipcode"
               onChange={handleChange}
           />
-          <input key='handlesubmit' type="submit" value="submit zipcode"/>
+          <input className="distance-button" key='handlesubmit' type="submit" value="submit zipcode"/>
         </form>
       
     </div><div className='container' key='container'>
-      {props.items? loaded(): loading}
+      {props.items? loaded(): loading()}
     </div>
  </>
     

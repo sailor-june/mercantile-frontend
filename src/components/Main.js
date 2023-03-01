@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-
+import Wanted from "../pages/Wanted";
 import Index from "../pages/Index";
 import About from "../pages/About";
 import ItemShow from "../pages/ItemShow";
@@ -11,9 +11,20 @@ import Update from "../pages/Update";
 function Main(props) {
   /////////////set Items state
 
-  const [items, setItems] = useState(null);
+  const [items, setItems] = useState(null)
+  const [wanted, setWanted] = useState(null)
+  
+
 
   const URL = "https://mercantile.herokuapp.com/";
+
+  const getWanted = async() => {
+    const response = await fetch(URL + "wanted")
+    const data = await response.json()
+    setWanted(data)
+  }
+
+  
 
   const getItems = async () => {
     const response = await fetch(URL + "items");
@@ -58,39 +69,53 @@ function Main(props) {
   };
 
   useEffect(() => {
+    getWanted()
+  }, [])
+
+  useEffect(() => {
     getItems();
   }, []);
 
   return (
-    <>
-    <Routes>
-      <Route
-        path="/items"
-        element={<Index items={items} user={props.user} />}
-      />
+    <main>
+      <Routes>
+        <Route path="/items" element={<Index items={items} user={props.user}/>} />
 
-      <Route
-        path="/items/:id"
-        element={
-          <ItemShow items={items} deleteItem={deleteItem} user={props.user} />
-        }
-      />
+        <Route
+          path="/items/:id"
+          element={<ItemShow items={items} deleteItem={deleteItem} user={props.user} />}
 
-      <Route
-        path="/items/update/:id"
-        element={
-          <Update items={items} updateItem={updateItem} user={props.user} />
-        }
-      />
+        />
 
-      <Route path="/about" element={<About user={props.user} />} />
-      <Route
-        path="/items/new"
-        element={<NewItem createItem={createItem} user={props.user} />}
-      />
-      <Route path="/" element={<About user={props.user} />} />
-    </Routes>
-    </>
+        <Route
+          path="/items/update/:id"
+          element={<Update items={items} updateItem={updateItem} user={props.user}/>}
+        />
+
+        <Route
+        path="/wanted"
+        element={<Wanted wanted={wanted} items={items}/>}
+        />
+        
+        <Route
+        path="/about"
+        element={<About user={props.user}/>}
+        />
+        
+        
+        <Route
+          path="/items/new"
+          element={<NewItem createItem={createItem} user={props.user}/>}
+        />
+        
+        <Route 
+          path="/"
+          element={<About user={props.user}/>}
+        />
+      
+       </Routes>
+    </main>
+
   );
 }
 

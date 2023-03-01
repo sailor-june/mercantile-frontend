@@ -44,7 +44,7 @@ const loaded = () => {
             onChange={handleChange}
             value={editForm.description}
           />
-          <label for="condition">Condition:</label>
+          <label>Condition:</label>
         <select value={editForm.condition}
         defaultValue={item.condition}
         name="condition"
@@ -56,7 +56,7 @@ const loaded = () => {
             <option value="used">used</option>
         
         </select>
-        <label for="image">Link to image</label>
+        <label>Link to image</label>
           <input
             type="text"
             name="image"
@@ -74,7 +74,7 @@ const loading = () => {
   
   return (
     <section>
-      { props.items ? loaded() : loading() }
+      { props.items ? loaded(): loading }
     </section>
   )
 

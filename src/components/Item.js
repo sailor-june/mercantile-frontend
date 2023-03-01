@@ -47,9 +47,10 @@ function Item(props) {
 
           <li key='zip'>{props.item.zipcode}</li>
           {props.userzip && props.item.zipcode ? (
+
             <>
-              <button key='zipbutton' onClick={searchZipcodes}>how far?</button>
-              <p></p>
+              <button key='zipbutton' className="far-button" onClick={searchZipcodes}>how far?</button>
+            
             </>
           ) : null}
         </ul>
